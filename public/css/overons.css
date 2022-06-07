@@ -1,0 +1,407 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+body{
+    
+    background-image: url(../photos/overonsbackground.jpg);
+}
+
+h1 {
+    font-size: 30px;
+    color: white;
+    font-family: 'Inter',
+        sans-serif;
+    font-family: 'Lobster',
+        cursive;
+    font-family: 'Saira Stencil One',
+        cursive;
+    padding-left: 40px;
+}
+
+/* NAVIGATION */
+
+header{
+    background-color: black;
+    
+}
+
+nav{
+    z-index: 9999;
+    box-shadow: white 4px 4px 40px;
+    position: fixed;
+    width: 100%;
+    height: 10%;
+    margin: auto;
+    font-family: saira Stencil one;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav .mainMenu{
+    width: 100%;
+    margin: auto;
+    padding-bottom: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+nav .mainMenu li a{
+    display: inline-block;
+    padding: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    font-size: 1.5rem;
+}
+
+nav .mainMenu li a:hover {
+    background: rgb(255, 255, 255);
+    color: black;
+}
+
+nav .openMenu{
+    font-size: 2rem;
+    margin: 20px;
+    display: none;
+    cursor: pointer;
+}
+
+nav .mainMenu .closeMenu {
+    font-size: 2rem;
+    display: none;
+    cursor: pointer;
+}
+
+.icons{
+    font-size: 1.5em;
+    margin-left: 2em;
+}
+
+.icons i {
+    margin-left: 0.5em;
+}
+
+.fa-facebook:hover{
+    background: rgb(255, 255, 255);
+    color: black;
+}
+
+.fa-twitter:hover{
+    background: rgb(255, 255, 255);
+    color: black;
+}
+
+.fa-youtube:hover{
+    background: rgb(255, 255, 255);
+    color: black;
+}
+
+.fa-snapchat:hover{
+    background: rgb(255, 255, 255);
+    color: black;
+}
+
+.fa-users:hover{
+    background: rgb(255, 255, 255);
+    color: black;
+}
+
+.logo img{
+    margin-left: 25%;
+    cursor: pointer;
+    width: 30%;
+    
+}
+
+.highlight{
+    border-bottom: solid rgb(255, 255, 255) 2px;
+}
+
+/* NAVIGATION */
+
+.overonsbackground h2{
+    border-bottom: white solid 1px;
+    padding-bottom: 0.5em;
+}
+
+
+
+
+.overonsbackground {
+   
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+}
+
+.displaycontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.box1{
+    padding: 2em;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    width: 80%;
+    margin: auto;
+}
+.box1 h3{
+    font-size: 2em;
+    margin-bottom: 2em;
+    margin-right: 2em;
+    font-family: 'Saira Stencil One',
+    cursive;
+}
+.box1 p{
+    font-family: 'Catamaran', sans-serif;
+}
+
+.border{
+    margin-bottom: 3em;
+}
+
+h2 {
+    font-size: 60px;
+    text-align: center;
+}
+
+
+footer {
+    background-color: #7a1399;
+    background-image: url(../photos/streetart2.jpg);
+    background-size: cover;
+}
+
+h2 {
+    color: white;
+    font-family: 'Inter',
+        sans-serif;
+    font-family: 'Lobster',
+        cursive;
+    font-family: 'Saira Stencil One',
+        cursive;
+    padding-top: 100px;
+
+}
+
+.sponsors {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 200px;
+    width: 50%;
+}
+
+.sponsor2 {
+    width: 40%;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex {
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000f1;
+}
+
+.tekstsponsor {
+    color: white;
+    font-size: 30px;
+    padding: 100px;
+    text-align: center;
+}
+
+.flex1 {
+    width: 80%;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 50px;
+    padding-top: 100px;
+
+}
+
+.flex1 a {
+    color: #d4d4d4;
+    text-decoration: none;
+}
+.flex2 {
+    width: 30%;
+    height: 30px;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    color: #fff;
+    font-family: 'Catamaran', sans-serif;
+}
+
+#faq{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+   
+}
+
+hr {
+    width: 20%;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(204, 194, 194, 0), rgba(230, 230, 230, 0.75), rgba(233, 222, 222, 0));
+}
+
+img {
+    padding-bottom: 50px;
+}
+
+.tekstsponsor {
+    color: white;
+    font-size: 30px;
+    padding: 100px;
+    text-align: center;
+}
+
+.tekstsponsor p{
+    font-family: 'Catamaran', sans-serif;
+}
+
+@media (max-width: 480px){
+
+    nav{
+        height: 17%;
+    }
+
+    nav .logo img{
+        width: 30%;
+    }
+
+    .logo img{
+        margin-left: 0%;
+        cursor: pointer;
+        width: 30%;
+        
+    }
+
+    nav .mainMenu{
+        
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: black;
+        transition: top 1s ease;
+        display: none;
+    }
+
+    nav .mainMenu .closeMenu{
+        display: block;
+        position: absolute;
+        top: 20;
+        right: 20px;
+    }
+
+    nav .openMenu {
+        display: block;
+    }
+
+    nav .mainMenu li a:hover{
+        background: none;
+        color: white;
+        font-size: 1.6rem;
+    }
+
+    .icons{
+        margin-right: 2.5em;
+    }
+
+    .icons i{
+        
+        display: inline-block;
+        padding: 12px;
+    }
+    #faq{
+        width: 100%;
+        margin: auto;
+        display: inline;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+       
+    } 
+
+    .tekstsponsor p{
+        font-size: 15px;
+        font-family: 'Catamaran', sans-serif;
+    }
+
+    .sponsors {
+    display: inline;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 500px;
+    width: 50%;
+
+}
+
+    .sponsor1, .sponsor2, .sponsor3 {
+    margin: auto;
+    width: 80%;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    }
+
+    .sponsor1{
+        margin-bottom: 6em;
+    }
+
+    .flex2 {
+        font-size: 13px;
+        font-family: 'Catamaran', sans-serif;
+        width: 60%;
+        margin: auto;
+        height: 30px;
+        padding-top: 100px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        color: #fff;
+    }
+   
+    .flex1 a{
+        font-size: 0.5em;
+    }
+}
+
+.fas {
+    text-decoration: none;
+    color: white;
+}

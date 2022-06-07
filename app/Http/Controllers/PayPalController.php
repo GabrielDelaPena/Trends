@@ -1,0 +1,119 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Ticket;
+use Illuminate\Http\Request;
+use Srmklive\PayPal\Services\PayPal as PayPalClient;
+
+class PayPalController extends Controller
+{
+    /**
+     * create transaction.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function createTransaction()
+    {
+        $ticket = Ticket::findOrFail(session('registration.ticket'));
+        $totalPrice = 0;
+        if (session('registration.voucher') === "ja") {
+            $totalPrice = $ticket->price + 5;
+        } else {
+            $totalPrice = $ticket->price;
+        }
+        return view('payment', [
+            'totalPrice' => $totalPrice
+        ]);
+    }
+
+    /**
+     * process transaction.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function processTransaction(Request $request){
+        $ticket = Ticket::findOrFail(session('registration.ticket'));
+        $totalPrice = 0;
+        if (session('registration.voucher') === "ja") {
+            $totalPrice = $ticket->price + 5;
+        } else {
+            $totalPrice = $ticket->price;
+        }
+        
+        $provider = new PayPalClient;
+        $provider->setApiCredentials(config('paypal'));
+        $paypalToken = $provider->getAccessToken();
+
+        $response = $provider->createOrder([
+            "intent" => "CAPTURE",
+            "application_context" => [
+                "return_url" => route('successTransaction'),
+                "cancel_url" => route('cancelTransaction'),
+            ],
+            "purchase_units" => [
+                0 => [
+                    "amount" => [
+                        "currency_code" => "EUR",
+                        "value" => $totalPrice,
+                    ]
+                ]
+            ]
+        ]);
+
+        if (isset($response['id']) && $response['id'] != null) {
+
+            // redirect to approve href
+            foreach ($response['links'] as $links) {
+                if ($links['rel'] == 'approve') {
+                    return redirect()->away($links['href']);
+                }
+            }
+
+            return redirect()
+                ->route('createTransaction')
+                ->with('error', 'Something went wrong.');
+        } else {
+            return redirect()
+                ->route('payment')
+                ->with('error', $response['message'] ?? 'Something went wrong.');
+        }
+    }
+
+
+    /**
+     * success transaction.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function successTransaction(Request $request)
+    {
+        $provider = new PayPalClient;
+        $provider->setApiCredentials(config('paypal'));
+        $provider->getAccessToken();
+        $response = $provider->capturePaymentOrder($request['token']);
+
+        if (isset($response['status']) && $response['status'] == 'COMPLETED') {
+            return redirect()
+                ->route('invoice.index')
+                ->with('success', 'Transaction complete.');
+        } else {
+            return redirect()
+                ->route('payment')
+                ->with('error', $response['message'] ?? 'Something went wrong.');
+        }
+    }
+
+
+    /**
+     * cancel transaction.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function cancelTransaction(Request $request)
+    {
+        return redirect()
+            ->route('register.index')
+            ->with('error', $response['message'] ?? 'You have canceled the transaction.');
+    }
+}

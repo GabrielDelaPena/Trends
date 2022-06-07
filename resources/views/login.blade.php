@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url('css/login.css') }}">
+    <link rel="icon" href="/project tfestival/assets/photos/Logo.png" type="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Lobster&family=Saira+Stencil+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Lobster&family=Saira+Stencil+One&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7b01b22b23.js" crossorigin="anonymous"></script>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+    <!-- Header : Een Button "Terug" linksboven-->
+    <header>
+        <div class="back"><a href="{{ route('home') }}">TERUG</a></div>
+    </header>
+
+    <main>
+        <!-- Sectie 1 : een Form voor login admin-->
+        <section>
+            <div class="login-wrap">
+                <div class="login-html">
+                    <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Log
+                        In</label>
+                    <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">INFO</label>
+                    <div class="login-form">
+                        <form class="sign-in-htm" method="post" action="{{ route('login.store') }}">
+                            @if (session()->has('status'))
+                            <p class="error">{{ session('status') }}</p>
+                            @endif
+                            @csrf
+                            <div class="group">
+                                <label for="user" class="label">Gebruikersnaam</label>
+                                <input id="user" type="text" class="input" name="name">
+                            </div>
+                            <div class="group">
+                                <label for="pass" class="label">Wachtwoord</label>
+                                <input id="pass" type="password" class="input" data-type="password" name="password">
+                            </div>
+                            <div class="group">
+                                <input id="check" type="checkbox" class="check" checked>
+                                <label for="check"><span class="icon"></span> Onthouden</label>
+                            </div>
+                            <div class="group">
+                                <input type="submit" class="button" value="Sign In">
+                            </div>
+                            <div class="hr"></div>
+                            <div class="foot-lnk">
+                                <a href="#forgot">Wachtwoord vergeten?</a>
+                            </div>
+                            <div class="logo">
+                                <img src="{{ asset('photos/Logo.png') }}" alt="" width="100px">
+                            </div>
+                        </form>
+                        <div class="sign-up-htm">
+                            <p>Nam a finibus eros. Aliquam id blandit ex, vitae consequat est. Class aptent taciti
+                                sociosqu
+                                ad
+                                litora torquent per conubia nostra, per inceptos himenaeos. Praesent sed velit a turpis
+                                finibus
+                                finibus eget ac orci. Morbi interdum dui sit amet pretium vehicula. Phasellus iaculis
+                                diam
+                                ut
+                                mauris porttitor blandit. Integer gravida metus id dapibus pulvinar.<br><br> Maecenas
+                                interdum
+                                id ligula
+                                at condimentum. Quisque eget purus tortor. Cras luctus arcu sed enim vulputate
+                                condimentum.
+                                Phasellus et pharetra magna. Fusce eu ante in nulla ullamcorper tristique sit amet ac
+                                risus.
+                                Nunc eleifend semper eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing
+                                elit.<br><br>
+
+                                Etiam porttitor rhoncus sem, vel tincidunt velit. Nam in eros nec odio convallis
+                                fringilla
+                                ut
+                                nec magna. Morbi congue risus quam. Proin placerat augue eu purus accumsan, vel
+                                convallis
+                                eros
+                                finibus. Integer tristique dolor fermentum ex blandit, et posuere lorem congue. Integer
+                                condimentum at mauris vel fringilla.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer : 2 Flex's onder mekaar namelijk Social Media & FAQ -->
+    <footer>
+        <div class="flex">
+            <hr>
+            <div class="flex1">
+                <a href="www.facebook.com/tfestival" class="fa fa-facebook"></a>
+                <a href="www.twitter.com/oranjefestival" class="fa fa-twitter"></a>
+                <a href="www.youtube.com/channel/UCoxcrlsEtLdf3VWBVrJZPSA" class="fa fa-youtube"></a>
+                <a href="www.snapchat.com/" class="fa fa-snapchat"></a>
+            </div>
+            <hr>
+            <div class="flex2">
+                <p>&copy;2022 't Festival </p>
+                <p>FAQ & Contact </p>
+                <p>Privacy </p>
+                <p>Ipsum</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ asset('js/login.js') }}"></script>
+</body>
+
+</html>
