@@ -1,64 +1,83 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# t'Festival
+This is a project made for the course Trends II. 
+Our scope was the following: "An event needs to upgrade their website, they want to add 
+payments method, make sure that a admin can log in and make changes. Also a client that has purchased a ticket needs to be able to see their ticket.
+At the festival, security needs to be able to scan the code on the pdf, and also see if it is valid.
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+## Rescources
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Add to cart
+https://www.youtube.com/watch?v=FiC4rUYi27w
+https://github.com/bumbummen99/LaravelShoppingcart
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Destroy methode
+https://stackoverflow.com/questions/52658708/how-to-use-pre-defined-destroy-method-in-laravel
+https://advancedwebtuts.com/tutorial/how-to-call-a-controller-function-on-button-click-in-laravel
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-### Premium Partners
+Download PDF Ticket
+https://github.com/barryvdh/laravel-dompdf
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+MailTrap
+https://mailtrap.io/inboxes/1757408/messages/2815694937
 
-## Contributing
+Scanner React
+https://www.npmjs.com/package/react-native-qrcode-scanner
+## Built with
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+This section lists any major frameworks/libraries used to bootstrap your project.
 
-## Code of Conduct
+- [Laravel](https://laravel.com/)
+- [React](https://reactjs.org/)
+- [MySQL](https://www.mysql.com/)
+- [Laravel](https://laravel.com/)
+- [Laravel](https://laravel.com/)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Getting started
+
+Before forking the git, you need to check if you installed Laravel Composer
+(https://getcomposer.org/download).
+
+First of all, you need to download paypal.
+```bash
+composer require srmklive/paypal:~3.0
+```
+Don't forget to make a database in your phpMyAdmin.
+
+To start the project
+```bash
+php artisan serve
+```
+```bash
+php artisan migrate
+```
+```bash
+php artisan db:seed --class=AdminUserSeeder
+```
+
+Log in as admin with: 
+username: admin
+password: 123456
+
+## Authors
+
+- [@Gabriel](https://www.github.com/GabrielDelaPena)
+- [@Oumaima](https://www.github.com/JDogMad)
+- [@Bilal](https://www.github.com/Billy-San)
+- [@Nawfel](https://www.github.com/n4wf3l)
+- [@Furqan](https://www.github.com/Jamil4921)
+- [@Lemmar](https://www.github.com/lemmarK)
+
+
+
 
 ## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+[MIT](https://choosealicense.com/licenses/mit/)
